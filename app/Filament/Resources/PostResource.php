@@ -50,8 +50,6 @@ class PostResource extends Resource
                     ]),
                 Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->disk('public')
-                    ->visibility('public')
                     ->columnSpanFull()
                     ->label('Post Image')
                     ->maxSize(2048)
