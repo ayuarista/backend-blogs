@@ -7,6 +7,6 @@ Route::get('/', function () {
 });
 
 Route::get('/check-user', function () {
-    $user = \App\Models\User::where('email', 'admin@example.com')->first();
+    $user = \App\Models\User::where('email', 'admin@test.com')->first();
     return $user ? 'User exists: ' . $user->name : 'User not found';
 });
