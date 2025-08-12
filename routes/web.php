@@ -6,7 +6,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/check-user', function () {
-    $user = \App\Models\User::where('email', 'admin@test.com')->first();
-    return $user ? 'User exists: ' . $user->name : 'User not found';
+Route::get('/test-panel', function () {
+    $user = \App\Models\User::where('email', 'admin@example.com')->first();
+
+    if ($user) {
+        $panel = filament('admin');
+        $canAccess = $user->canAccessPanel($panel);
+        return "User: {$user->name}, Can access: " . ($canAccess ? 'YES' : 'NO');
+    }
+
+    return 'User not found';
 });
