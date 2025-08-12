@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test-panel', function () {
-    $user = \App\Models\User::where('email', 'admin@example.com')->first();
+    $user = \App\Models\User::where('email', 'admin@test.com')->first();
 
     if ($user) {
         $panel = filament('admin');
