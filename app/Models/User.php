@@ -33,6 +33,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
     public function canAccessPanel(Panel $panel): bool
     {
         return true;
