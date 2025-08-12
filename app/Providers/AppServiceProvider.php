@@ -21,15 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Force HTTPS in production
         if (config('app.env') === 'production') {
-        URL::forceScheme('https');
-        URL::forceRootUrl(config('app.url'));
-
-        config([
-            'session.secure' => true,
-            'session.http_only' => true,
-            'session.same_site' => 'lax',
-        ]);
+            URL::forceScheme('https');
         }
+
+        // Optionally, you can also force the URL to use HTTPS
+        // URL::forceRootUrl(config('app.url'));
     }
 }
