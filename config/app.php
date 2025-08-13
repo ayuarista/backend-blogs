@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Blog'),
+    'force_https' => env('FORCE_HTTPS', false),
 
     /*
     |--------------------------------------------------------------------------
