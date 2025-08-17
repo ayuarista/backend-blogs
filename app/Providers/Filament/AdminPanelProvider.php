@@ -38,12 +38,6 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
-                \App\Filament\Widgets\BlogStatsWidget::class,
-                \App\Filament\Widgets\RecentPostsWidget::class,
-                \App\Filament\Widgets\PostsPerCategoryChart::class,
-                \App\Filament\Widgets\PublishingTrendChart::class,
-                \App\Filament\Widgets\PopularTagsWidget::class,
-                \App\Filament\Widgets\CategoryStatsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
